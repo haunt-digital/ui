@@ -19,8 +19,7 @@ function getBackgroundColor(style) {
   const styleWithBg = _.find(style, (styleDef) =>
     styleDef.backgroundColor && styleDef.backgroundColor !== 'transparent'
   );
-
-  return styleWithBg && styleWithBg.backgroundColor || 'transparent';
+  return style.statusColor ? style.statusColor : styleWithBg && styleWithBg.backgroundColor || 'transparent';
 }
 
 function setStatusBarStyle(backgroundColor) {
@@ -30,7 +29,7 @@ function setStatusBarStyle(backgroundColor) {
 
   function setStyle(bgColor) {
     if (Platform.OS === 'android') {
-      StatusBar.setBackgroundColor('rgba(0, 0, 0, 0.2)');
+      StatusBar.setBackgroundColor(bgColor);
     } else {
       const barStyle = chooseBarStyle(bgColor);
       StatusBar.setBarStyle(barStyle);
