@@ -28,11 +28,11 @@ function setStatusBarStyle(backgroundColor) {
   }
 
   function setStyle(bgColor) {
+    const barStyle = chooseBarStyle(bgColor);
+     StatusBar.setBarStyle(barStyle);
+
     if (Platform.OS === 'android') {
       StatusBar.setBackgroundColor(bgColor);
-    } else {
-      const barStyle = chooseBarStyle(bgColor);
-      StatusBar.setBarStyle(barStyle);
     }
   }
 
