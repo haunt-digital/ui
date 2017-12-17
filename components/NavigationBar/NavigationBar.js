@@ -24,7 +24,7 @@ function getBackgroundColor(style) {
 
 function setStatusBarStyle(backgroundColor) {
   function chooseBarStyle(bgColor) {
-    return color(bgColor).isDark() ? 'light-content' : 'default';
+    return color(bgColor).isDark() ? 'light-content' : 'dark-content';
   }
 
   function setStyle(bgColor) {
